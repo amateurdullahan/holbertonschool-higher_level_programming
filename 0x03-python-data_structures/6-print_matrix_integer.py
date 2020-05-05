@@ -7,6 +7,3 @@ def print_matrix_integer(matrix=[[]]):
             else:
                 print(matrix[a][b], end='')
         print();
-    else:
-        print("--\n")
-        exit()
