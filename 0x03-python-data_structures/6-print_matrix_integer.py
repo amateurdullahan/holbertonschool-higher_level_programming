@@ -6,4 +6,4 @@ def print_matrix_integer(matrix=[[]]):
                 print(matrix[a][b], end=' ')
             else:
                 print(matrix[a][b], end='')
-        print()
+        print("")
