@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 """Documentation for Square Class"""
+
+
 class Square():
-    """Empty Square Class"""
+    """Empty Square Class
+
+       Attributes:
+          None
+    """
     pass
