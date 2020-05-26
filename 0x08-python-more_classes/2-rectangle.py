@@ -6,8 +6,8 @@ class Rectangle:
     """init rectangle"""
     def __init__(self, width=0, height=0):
         """init rectangle"""
-        self.__width = width
-        self.__height= height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -27,7 +27,7 @@ class Rectangle:
     @property
     def height(self):
         """init height"""
-        return self.height
+        return self.__height
     
     
     @height.setter
@@ -42,11 +42,11 @@ class Rectangle:
 
     def area(self):
         """find area"""
-        return (self.__height * self.__width)
+        return (self.height * self.width)
     
     def perimeter(self):
         """find perimeter"""
-        if self.__height == 0 or self.__width == 0:
+        if self.height == 0 or self.width == 0:
             return 0
         else:
-            return ((self.__height * 2) + (self.__width * 2))
+            return ((self.height * 2) + (self.width * 2))
