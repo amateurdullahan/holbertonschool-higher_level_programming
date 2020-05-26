@@ -3,16 +3,20 @@
 
 
 class Rectangle:
+    """init rectangle"""
     def __init__(self, width=0, height=0):
-            self.__width = width
-            self.__height= height
+        """init rectangle"""
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
+        """init width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """set width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -22,11 +26,12 @@ class Rectangle:
 
     @property
     def height(self):
-        return self.height
-    
-    
+        """init height"""
+        return self.__height
+
     @height.setter
     def height(self, value):
+        """set height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -35,21 +40,23 @@ class Rectangle:
             self.__height = value
 
     def area(self):
-        return (self.__height * self.__width)
-    
+        """find area"""
+        return (self.height * self.width)
+
     def perimeter(self):
-        if self.__height == 0 or self.__width == 0:
+        """find perimeter"""
+        if self.height == 0 or self.width == 0:
             return 0
         else:
-            return ((self.__height * 2) + (self.__width * 2))
+            return ((self.height * 2) + (self.width * 2))
 
     def __str__(self):
-        string = ""
-        if self.__height == 0 or self.__width == 0:
-            return string
-        else:
-            for a in range(self.__height):
-                for b in range(self.__width):
-                    string.append('#')
-                string.append('\n')
-            return string
+        """print rectangle"""
+        rect = ""
+        if self.width == 0 or self.height == 0:
+            return rect
+        for a in range(self.height):
+            rect += ('#' * self.width)
+            if a + 1 != self.height:
+                rect += '\n'
+        return rect
