@@ -28,8 +28,7 @@ class Rectangle:
     def height(self):
         """init height"""
         return self.__height
-    
-    
+
     @height.setter
     def height(self, value):
         """set height"""
@@ -43,7 +42,7 @@ class Rectangle:
     def area(self):
         """find area"""
         return (self.height * self.width)
-    
+
     def perimeter(self):
         """find perimeter"""
         if self.height == 0 or self.width == 0:

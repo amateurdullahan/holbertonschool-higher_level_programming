@@ -28,8 +28,7 @@ class Rectangle:
     def height(self):
         """init height"""
         return self.__height
-    
-    
+
     @height.setter
     def height(self, value):
         """set height"""
