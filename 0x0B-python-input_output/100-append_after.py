@@ -4,7 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """insert new string after search string"""
-    with open(filename ,'r+') as fr:
+    with open(filename, 'r+') as fr:
         readr = fr.readlines()
     c = 0
     with open(filename, 'w') as fw:
