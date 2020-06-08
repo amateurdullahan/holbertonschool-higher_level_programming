@@ -89,7 +89,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """class specific str method"""
-        return "[Rectange] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
@@ -103,3 +103,8 @@ class Rectangle(Base):
         else:
             for key, update in kwargs.items():
                 setattr(self, key, update)
+
+    def to_dictionary(self):
+        rec_dict = {'x': self.__x, 'y': self.__y, 'id': self.id,
+                    'height': self.__height, 'width': self.__width}
+        return rec_dict
