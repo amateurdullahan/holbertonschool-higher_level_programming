@@ -36,9 +36,32 @@ class Base:
             else:
                 f.write(nstr)
 
+    @staticmethod
     def from_json_string(json_string):
         """return list of json string"""
         if json_string is None or json_string == "":
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """return instance with attributes set"""
+        inst = cls(1, 1)
+        inst.update(**dictionary)
+        return inst
+
+    @classmethod
+    def load_from_file(cls):
+        """return list of instances"""
+        nlist = []
+        fname = "{}.json".format(cls.__name__)
+        try:
+            with open(fname) as f:
+                ndict = cls.from_json_string(f.read())
+            for c in ndict:
+                inst = cls.create(**dictionary)
+                nlist.append(inst)
+            return nlist
+        except:
+            return nlist
