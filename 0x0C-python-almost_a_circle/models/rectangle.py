@@ -93,10 +93,14 @@ class Rectangle(Base):
         return "[Rectange] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         udict = {0: self.id, 1: self.__width,
                  2: self.__height, 3: self.__x, 4: self.__y}
-        for c, update in enumerate(args):
-            udict[c] = update
-        self.id, self.__width, self.__height, self.__x, self.__y = (
-            udict[0], udict[1], udict[2], udict[3], udict[4])
+        if args:
+            for c, update in enumerate(args):
+                udict[c] = update
+            self.id, self.__width, self.__height, self.__x, self.__y = (
+                udict[0], udict[1], udict[2], udict[3], udict[4])
+        else:
+            for key, update in kwargs.items():
+                setattr(self, key, update)
