@@ -45,10 +45,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """set x"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """set x"""
         if value < 0:
             raise ValueError("x must be >= 0")
         else:
@@ -56,10 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """get y"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """set y"""
         if value < 0:
             raise ValueError("y must be >= 0")
         else:
@@ -71,4 +75,12 @@ class Rectangle(Base):
             raise TypeError("{:s} must be an integer".format(name))
 
     def area(self):
+        """return area"""
         return self.__width * self.__height
+
+    def display(self):
+        """prints rectangle"""
+        for a in range(self.__height):
+            for b in range(self.__width):
+                print("#", end='')
+            print()
