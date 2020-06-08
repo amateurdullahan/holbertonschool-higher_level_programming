@@ -12,3 +12,18 @@ class Square(Rectangle):
         """overwritten str"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
             self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        """get size, which is width"""
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """set width and height to same value"""
+        if type(size) is not int:
+            raise TypeError("width must be an integer")
+        if size <= 0:
+            raise ValueError("width must be >= 0")
+        self.__width = size
+        self.__height = size

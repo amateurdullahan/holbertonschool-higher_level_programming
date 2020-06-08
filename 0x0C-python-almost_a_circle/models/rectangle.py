@@ -7,10 +7,6 @@ class Rectangle(Base):
     """Rectangle Class that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Rectangle init"""
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.integer_validator("x", x)
-        self.integer_validator("y", y)
         self.width = width
         self.height = height
         self.x = x
@@ -25,6 +21,8 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """set height"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         else:
@@ -38,6 +36,8 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """set height"""
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         else:
@@ -51,6 +51,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """set x"""
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         else:
@@ -64,15 +66,12 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """set y"""
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
-
-    def integer_validator(self, name, value):
-        """validate integer"""
-        if not isinstance(value, int):
-            raise TypeError("{:s} must be an integer".format(name))
 
     def area(self):
         """return area"""
