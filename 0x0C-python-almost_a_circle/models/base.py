@@ -66,5 +66,5 @@ class Base:
                 inst = cls.create(**dictionary)
                 nlist.append(inst)
             return nlist
-        except FileNotFoundError:
+        except:
             return nlist
