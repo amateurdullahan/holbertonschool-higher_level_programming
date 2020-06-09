@@ -31,10 +31,11 @@ class TestBase(unittest.TestCase):
         del self.b4
         del self.b5
 
-    def test_init(self):
+    def test_ainit(self):
         """test init"""
         print("test_init")
         # b1
+        self.assertEqual(self.b1.id, 1)
         self.assertIsNotNone(self.b1)
         self.assertIsInstance(self.b1, Base)
         self.assertEqual(self.b1.id, 1)
