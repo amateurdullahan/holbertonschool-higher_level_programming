@@ -38,7 +38,7 @@ class Square(Rectangle):
             for c, update in enumerate(args):
                 udict[c] = update
                 self.id, self.size, self.x, self.y = (
-                udict[0], udict[1], udict[2], udict[3])
+                    udict[0], udict[1], udict[2], udict[3])
         else:
             for key, update in kwargs.items():
                 setattr(self, key, update)
