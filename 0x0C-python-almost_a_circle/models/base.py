@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base file"""
 import json
+import csv
 
 
 class Base:
@@ -41,13 +42,15 @@ class Base:
         """return list of json string"""
         if json_string is None or json_string == "":
             return []
-        else:
-            return json.loads(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
         """return instance with attributes set"""
-        inst = cls(1, 1)
+        if cls.__name__ == "Rectangle":
+            inst = cls(1, 1)
+        elif cls.__name__ == "Square":
+            inst = cls(1)
         inst.update(**dictionary)
         return inst
 
@@ -63,5 +66,5 @@ class Base:
                 inst = cls.create(**dictionary)
                 nlist.append(inst)
             return nlist
-        except:
+        except FileNotFoundError:
             return nlist
