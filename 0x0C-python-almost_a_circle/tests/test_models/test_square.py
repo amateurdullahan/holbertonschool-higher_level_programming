@@ -15,7 +15,7 @@ class TestSquare(unittest.TestCase):
         self.s2 = Square(5, 10)
         self.s3 = Square(5, 10, 15)
         self.s4 = Square(2, 4, 6, 8)
-    
+
     def tearDown(self):
         """tear down"""
         print('tearDown')
@@ -24,11 +24,10 @@ class TestSquare(unittest.TestCase):
         del self.s3
         del self.s4
 
-
     def test_ainit(self):
         """init test"""
         print("test_init")
-        
+
         # s1 tests
         self.assertIsNotNone(self.s1)
         self.assertIsInstance(self.s1, Base)
@@ -73,7 +72,6 @@ class TestSquare(unittest.TestCase):
         def test_attributes(self):
             """test raised exceptions"""
             print("test_attributes")
-            
             # s1
             with self.assertRaises(TypeError):
                 self.s1.__init__(None, 2)
@@ -86,13 +84,11 @@ class TestSquare(unittest.TestCase):
                 self.s2.__init__(4, False, 2)
             with self.assertRaises(TypeError):
                 self.s2.__init__(1, 2, (3, ))
-            
             # s3
             with self.assertRaises(ValueError):
                 self.s3.__init__(4, -3, 4)
             with self.assertRaises(ValueError):
                 self.s3.__init__(0, 0, 0)
-
             # s4
             with self.assertRaises(TypeError):
                 self.s4.__init__(True, 1, 2, 3)

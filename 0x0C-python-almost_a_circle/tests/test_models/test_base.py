@@ -39,19 +39,19 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(self.b1)
         self.assertIsInstance(self.b1, Base)
         self.assertEqual(self.b1.id, 1)
-        #b2
+        # b2
         self.assertIsNotNone(self.b2)
         self.assertIsInstance(self.b2, Base)
         self.assertEqual(self.b2.id, 12)
-        #b3
+        # b3
         self.assertIsNotNone(self.b3)
         self.assertIsInstance(self.b3, Base)
         self.assertEqual(self.b3.id, 12)
-        #b4
+        # b4
         self.assertIsNotNone(self.b4)
         self.assertIsInstance(self.b4, Base)
         self.assertEqual(self.b4.id, 2)
-        #b5
+        # b5
         self.assertIsNotNone(self.b5)
         self.assertIsInstance(self.b5, Base)
         self.assertEqual(self.b5.id, 3)
@@ -72,8 +72,8 @@ class TestBase(unittest.TestCase):
         """Init docstring check"""
         print("test_init_docstring")
         result = len(self.__init__.__doc__)
-        self.assertTrue(result > 0, True)        
-    
+        self.assertTrue(result > 0, True)
+
     def test_to_json_string_docstring(self):
         """to_json_string docstring check"""
         print("test_to_json_string_docstring")
