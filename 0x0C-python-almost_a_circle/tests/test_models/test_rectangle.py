@@ -31,7 +31,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_init(self):
         """init test"""
-
+        
 
 
     def test_module_doctstring(self):

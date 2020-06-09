@@ -25,7 +25,7 @@ class TestSquare(unittest.TestCase):
         del self.s4
 
 
-    def test_init(self):
+    def test_ainit(self):
         """init test"""
         print("test_init")
         
@@ -66,7 +66,7 @@ class TestSquare(unittest.TestCase):
         self.assertIs(type(self.s4), Square)
         self.assertEqual(self.s4.id, 8)
         self.assertEqual(self.s4.width, 2)
-        self.assertEqual(self.s2.height, 2)
+        self.assertEqual(self.s4.height, 2)
         self.assertEqual(self.s4.x, 4)
         self.assertEqual(self.s4.y, 6)
 
@@ -115,22 +115,22 @@ class TestSquare(unittest.TestCase):
         """test display method"""
         pass
 
-    def test_str(self):
+    def test_astr(self):
         """test str method"""
         print("test_str")
         # s1
-        self.assertEqual(self.s1.__str__(), "[Square] (1) 0/0 - 5")
+        self.assertEqual(self.s1.__str__(), "[Square] (10) 0/0 - 5")
         # s2
-        self.assertEqual(self.s2.__str__(), "[Square] (2) 10/0 - 5")
+        self.assertEqual(self.s2.__str__(), "[Square] (11) 10/0 - 5")
         # s3
-        self.assertEqual(self.s3.__str__(), "[Square] (3) 10/15 - 5")
+        self.assertEqual(self.s3.__str__(), "[Square] (12) 10/15 - 5")
         # s4
         self.assertEqual(self.s4.__str__(), "[Square] (8) 4/6 - 2")
 
     def test_update_args(self):
         """test update method with args"""
         print("test_update_args")
-        self.assertEqual(self.s1.__str__(), "[Square] (1) 0/0 - 5")
+        self.assertEqual(self.s1.__str__(), "[Square] (37) 0/0 - 5")
         self.s1.update(69)
         self.assertEqual(self.s1.__str__(), "[Square] (69) 0/0 - 5")
         self.s1.update(2, 4)
@@ -143,7 +143,7 @@ class TestSquare(unittest.TestCase):
     def test_update_kwargs(self):
         """test update method with kwargs"""
         print("test_update_kwargs")
-        self.s1.update(x=69)
+        self.s1.update(x=69, id=1)
         self.assertEqual(self.s1.__str__(), "[Square] (1) 69/0 - 5")
         self.s1.update(size=2, y=13)
         self.assertEqual(self.s1.__str__(), "[Square] (1) 69/13 - 2")
