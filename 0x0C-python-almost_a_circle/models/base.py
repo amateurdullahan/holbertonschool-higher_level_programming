@@ -9,11 +9,12 @@ class Base:
 
     def __init__(self, id=None):
         """Base init"""
-        if id is not None:
-            self.id = id
-        else:
+        if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        else:
+            self.id = id
+
 
     @staticmethod
     def to_json_string(list_dictionaries):

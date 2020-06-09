@@ -6,9 +6,17 @@ from models.base import Base
 
 class TestBase(unittest.TestCase):
     """test class of Base"""
+    @classmethod
+    def setUpClass(cls):
+        print("setupClass")
+
+    @classmethod
+    def tearDownClass(cls):
+        print("teardownClass")
+
     def setUp(self):
         """set up"""
-        print('setUp')
+        print("setUp")
         self.b1 = Base()
         self.b2 = Base(12)
         self.b3 = Base(12)
@@ -16,7 +24,7 @@ class TestBase(unittest.TestCase):
         self.b5 = Base()
 
     def tearDown(self):
-        print('tearDown')
+        print("tearDown")
         del self.b1
         del self.b2
         del self.b3
@@ -94,3 +102,6 @@ class TestBase(unittest.TestCase):
         print("test_load_from_file_docstring")
         result = len(Base.load_from_file.__doc__)
         self.assertTrue(result > 0, True)
+
+if __name__ == "__main__":
+    unittest.main()
