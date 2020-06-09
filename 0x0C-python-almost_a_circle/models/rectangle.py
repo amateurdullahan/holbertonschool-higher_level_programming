@@ -85,6 +85,7 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """update"""
         udict = {0: self.id, 1: self.__width,
                  2: self.__height, 3: self.__x, 4: self.__y}
         if args:
@@ -97,6 +98,7 @@ class Rectangle(Base):
                 setattr(self, key, update)
 
     def to_dictionary(self):
+        """to dictionary"""
         rec_dict = {'x': self.__x, 'y': self.__y, 'id': self.id,
                     'height': self.__height, 'width': self.__width}
         return rec_dict
