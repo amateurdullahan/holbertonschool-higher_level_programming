@@ -60,7 +60,7 @@ class Base:
     def load_from_file(cls):
         """return list of instances"""
         nlist = []
-        fname = "{}.json".format(cls.__name__)
+        fname = "{:s}.json".format(cls.__name__)
         try:
             with open(fname) as f:
                 ndict = cls.from_json_string(f.read())

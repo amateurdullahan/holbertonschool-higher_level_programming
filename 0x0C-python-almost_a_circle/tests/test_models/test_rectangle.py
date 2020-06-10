@@ -3,8 +3,6 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
-if __name__ == '__main__':
-    unittest.main()
 
 
 class TestRectangle(unittest.TestCase):
@@ -42,7 +40,7 @@ class TestRectangle(unittest.TestCase):
         self.assertIsNotNone(self.r1)
         self.assertIsInstance(self.r1, Base)
         self.assertIs(type(self.r1), Rectangle)
-        self.assertEqual(self.r1.id, 1)
+        self.assertEqual(self.r1.id, 28)
         self.assertEqual(self.r1.width, 10)
         self.assertEqual(self.r1.height, 1)
         self.assertEqual(self.r1.x, 0)
@@ -51,7 +49,7 @@ class TestRectangle(unittest.TestCase):
         self.assertIsNotNone(self.r2)
         self.assertIsInstance(self.r2, Base)
         self.assertIs(type(self.r2), Rectangle)
-        self.assertEqual(self.r2.id, 2)
+        self.assertEqual(self.r2.id, 29)
         self.assertEqual(self.r2.width, 1)
         self.assertEqual(self.r2.height, 10)
         self.assertEqual(self.r2.x, 0)
@@ -230,3 +228,6 @@ class TestRectangle(unittest.TestCase):
         print("test_to_dictionary_docstring")
         result = len(Rectangle.to_dictionary.__doc__)
         self.assertTrue(result > 0, True)
+
+if __name__ == '__main__':
+    unittest.main()

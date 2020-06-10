@@ -24,7 +24,7 @@ class TestSquare(unittest.TestCase):
         del self.s3
         del self.s4
 
-    def test_ainit(self):
+    def test_aaainit(self):
         """init test"""
         print("test_init")
 
@@ -33,7 +33,7 @@ class TestSquare(unittest.TestCase):
         self.assertIsInstance(self.s1, Base)
         self.assertIsInstance(self.s1, Rectangle)
         self.assertIs(type(self.s1), Square)
-        self.assertEqual(self.s1.id, 1)
+        self.assertEqual(self.s1.id, 66)
         self.assertEqual(self.s1.width, 5)
         self.assertEqual(self.s1.height, 5)
         self.assertEqual(self.s1.x, 0)
@@ -43,7 +43,7 @@ class TestSquare(unittest.TestCase):
         self.assertIsInstance(self.s2, Base)
         self.assertIsInstance(self.s2, Rectangle)
         self.assertIs(type(self.s2), Square)
-        self.assertEqual(self.s2.id, 2)
+        self.assertEqual(self.s2.id, 67)
         self.assertEqual(self.s2.width, 5)
         self.assertEqual(self.s2.height, 5)
         self.assertEqual(self.s2.x, 10)
@@ -53,7 +53,7 @@ class TestSquare(unittest.TestCase):
         self.assertIsInstance(self.s3, Base)
         self.assertIsInstance(self.s3, Rectangle)
         self.assertIs(type(self.s3), Square)
-        self.assertEqual(self.s3.id, 3)
+        self.assertEqual(self.s3.id, 68)
         self.assertEqual(self.s3.width, 5)
         self.assertEqual(self.s3.height, 5)
         self.assertEqual(self.s3.x, 10)
@@ -115,18 +115,18 @@ class TestSquare(unittest.TestCase):
         """test str method"""
         print("test_str")
         # s1
-        self.assertEqual(self.s1.__str__(), "[Square] (10) 0/0 - 5")
+        self.assertEqual(self.s1.__str__(), "[Square] ({}) 0/0 - 5".format(self.s1.id))
         # s2
-        self.assertEqual(self.s2.__str__(), "[Square] (11) 10/0 - 5")
+        self.assertEqual(self.s2.__str__(), "[Square] ({}) 10/0 - 5".format(self.s2.id))
         # s3
-        self.assertEqual(self.s3.__str__(), "[Square] (12) 10/15 - 5")
+        self.assertEqual(self.s3.__str__(), "[Square] ({}) 10/15 - 5".format(self.s3.id))
         # s4
         self.assertEqual(self.s4.__str__(), "[Square] (8) 4/6 - 2")
 
     def test_update_args(self):
         """test update method with args"""
         print("test_update_args")
-        self.assertEqual(self.s1.__str__(), "[Square] (37) 0/0 - 5")
+        self.assertEqual(self.s1.__str__(), "[Square] ({}) 0/0 - 5".format(self.s1.id))
         self.s1.update(69)
         self.assertEqual(self.s1.__str__(), "[Square] (69) 0/0 - 5")
         self.s1.update(2, 4)

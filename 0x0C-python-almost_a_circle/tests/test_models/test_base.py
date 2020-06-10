@@ -35,7 +35,6 @@ class TestBase(unittest.TestCase):
         """test init"""
         print("test_init")
         # b1
-        self.assertEqual(self.b1.id, 1)
         self.assertIsNotNone(self.b1)
         self.assertIsInstance(self.b1, Base)
         self.assertEqual(self.b1.id, 1)
