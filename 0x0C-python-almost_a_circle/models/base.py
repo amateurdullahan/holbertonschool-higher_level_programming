@@ -28,10 +28,11 @@ class Base:
         """write json representation to file"""
         nlist = []
         nstr = ""
-        for obj in list_objs:
-            nlist.append(obj.to_dictionary())
+        if list_objs is not None:
+            for obj in list_objs:
+                nlist.append(obj.to_dictionary())
         nstr = (cls.to_json_string(nlist))
-        fname = "{}.json".format(cls.__name__)
+        fname = "{:s}.json".format(cls.__name__)
         with open(fname, 'w') as f:
             if list_objs is None and type(list_objs) is not list:
                 f.write("[]")
