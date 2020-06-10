@@ -70,3 +70,13 @@ class Base:
             return nlist
         except:
             return nlist
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv"""
+        pass
+
+    @classmethod
+    def load_to_file_csv(cls):
+        """load from csv"""
+        return load_from_file(cls)
