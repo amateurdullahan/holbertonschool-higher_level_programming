@@ -1,2 +1,2 @@
 -- QWERTY
-show tables;
+SHOW TABLES;
