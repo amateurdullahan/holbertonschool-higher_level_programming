@@ -1,0 +1,2 @@
+-- QWERTY
+show tables;
