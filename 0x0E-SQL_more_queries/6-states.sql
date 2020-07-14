@@ -1,4 +1,8 @@
 -- America is now blood and tears
 -- instead of milk and honey
 CREATE DATABASE IF NOT EXISTS 'hbtn_0d_usa';
-CREATE TABLE IF NOT EXISTS 'htbn_0d_usa'.'states'(id INT AUTO_INCREMENT NOT NULL PRIMARY KEY, name VARCHAR(256) NOT NULL, UNIQUE(id));
+CREATE TABLE IF NOT EXISTS 'htbn_0d_usa'.'states'(
+       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+       name VARCHAR(256) NOT NULL, 
+       UNIQUE(id)
+);
