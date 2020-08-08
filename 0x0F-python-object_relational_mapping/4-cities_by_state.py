@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """comidant"""
 import MySQLdb
 from sys import argv
