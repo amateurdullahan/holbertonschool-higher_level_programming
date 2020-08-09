@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """comment"""
 from model_state import Base, State
-from sqlachemy import create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
