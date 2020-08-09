@@ -10,7 +10,7 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     curse = db.cursor()
-    curse.execute("SELECT * FROM 'states' ORDER BY 'id'")
+    curse.execute("SELECT * FROM states ORDER BY states.id")
     states = curse.fetchall()
     for state in states:
         if state[1][0] == "N":

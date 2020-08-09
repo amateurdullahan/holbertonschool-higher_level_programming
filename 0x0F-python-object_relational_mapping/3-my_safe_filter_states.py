@@ -8,13 +8,13 @@ if __name__ == "__main__":
                          port=3306,
                          user=argv[1],
                          passwd=argv[2],
-                         db=argv[3],
-                         search=argv[4])
+                         db=argv[3])
+    search = argv[4]
     curse = db.cursor()
-    curse.execute("SELECT * FROM 'states' ORDER BY 'id'")
+    curse.execute("SELECT * FROM states")
     states = curse.fetchall()
     for state in states:
-        if state == search:
+        if state[1] == search:
             print(state)
     curse.close()
     db.close()
