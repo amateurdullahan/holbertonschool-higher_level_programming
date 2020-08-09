@@ -16,5 +16,5 @@ if __name__ == "__main__":
     ORDER BY cities.id".format(argv[4]))
     cities = curse.fetchall()
     print(", ".join([row[0] for row in cities]))
-    cur.close()
+    curse.close()
     db.close()
