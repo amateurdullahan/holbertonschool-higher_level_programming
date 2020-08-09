@@ -17,5 +17,5 @@ if __name__ == "__main__":
     cities = curse.fetchall()
     for city in cities:
         print(city)
-    cur.close()
+    curse.close()
     db.close()
