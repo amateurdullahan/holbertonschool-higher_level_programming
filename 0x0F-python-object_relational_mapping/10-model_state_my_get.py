@@ -15,6 +15,6 @@ if __name__ == "__main__":
     result = jam.query(State).filter(State.name == argv[4]).all()
     if result != []:
         for states in result:
-            print('{}: {}'.format(states.id, states.name))
+            print('{}'.format(states.id))
     else:
         print("Not Found")
