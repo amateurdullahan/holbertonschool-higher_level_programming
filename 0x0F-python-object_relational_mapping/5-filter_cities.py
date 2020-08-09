@@ -11,7 +11,7 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     curse = db.cursor()
-    curse.execute("SELECT cities.name FROM cites INNERJOIN\
+    curse.execute("SELECT cities.name FROM cities INNER JOIN\
     states ON cities.state_id = states.id WHERE states.name = '{}'\
     ORDER BY cities.id".format(argv[4]))
     cities = curse.fetchall()
