@@ -13,9 +13,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=diesel)
     Session.configure(bind=diesel)
     jam = Session()
-    nstate = State(name='Louisiana')
+    nstate = State(name="Louisiana")
     jam.add(nstate)
-    jam.commit
+    jam.commit()
     print(nstate.id)
     jam.close()
 
