@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const x = process.argv[2]
+const x = process.argv[2];
 
 if (!Number(x)) {
   console.log('Missing number of occurrences');
